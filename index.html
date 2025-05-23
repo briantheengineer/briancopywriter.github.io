@@ -2,14 +2,17 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brian H. Castelhano Copywriter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #0f172a;
       --accent: #38bdf8;
       --light: #f8fafc;
+      --nav-bg: #fff;
+      --nav-text: #1e293b;
+      --name-color: #2563eb; /* azul bonito */
     }
     body {
       margin: 0;
@@ -18,37 +21,77 @@
       color: var(--primary);
       line-height: 1.6;
     }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
     header {
       background: var(--primary);
       color: white;
-      padding: 2rem;
+      padding: 6rem 2rem 2rem; /* pra dar espaço para nav fixa */
       text-align: center;
     }
     header h1 {
       margin: 0;
       font-size: 2rem;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background: #1e293b;
-      padding: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
     .section {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
     }
+    .about-me {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--accent);
+      flex-shrink: 0;
+    }
+    .about-text h2 {
+      margin: 0 0 1rem 0;
+      color: var(--name-color);
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
     .projects-preview {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
+      margin-top: 2rem;
     }
     .card {
       background: white;
@@ -60,21 +103,6 @@
     .card:hover {
       transform: scale(1.03);
     }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: auto;
-      display: block;
-      border: 4px solid var(--accent);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #e2e8f0;
-      margin-top: 3rem;
-    }
     .btn {
       background: var(--accent);
       color: white;
@@ -82,15 +110,21 @@
       border-radius: 0.5rem;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #e2e8f0;
+      margin-top: 3rem;
+    }
+    main {
+      margin-top: 80px; /* compensar nav fixa */
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Brian H. Castelhano Copywriter</h1>
-    <p>Textos que vendem. Estratégias que convertem.</p>
-  </header>
-
   <nav>
     <a href="/">Início</a>
     <a href="/todos.html">Todos os Projetos</a>
@@ -98,31 +132,39 @@
     <a href="#contato">Contrate meu Serviço</a>
   </nav>
 
-  <section class="section">
-    <img src="minha-foto.jpg" alt="Foto de Brian H. Castelhano" class="profile-img" />
-    <h2>Sobre Mim</h2>
-    <p>Sou Brian H. Castelhano, copywriter especializado em transformar ideias em palavras que vendem. Com experiência em diferentes nichos e plataformas, ajudo empresas e empreendedores a comunicar valor, engajar audiências e aumentar conversões. Minha paixão é escrever com propósito — seja para um lançamento, um funil de e-mails ou uma simples página de vendas.</p>
-  </section>
+  <main>
+    <header>
+      <h1>Brian H. Castelhano Copywriter</h1>
+      <p>Textos que vendem. Estratégias que convertem.</p>
+    </header>
 
-  <section class="section">
-    <h2>Alguns dos meus projetos</h2>
-    <div class="projects-preview">
-      <div class="card">
-        <h3>Landing Page de Produto X</h3>
-        <p>Texto persuasivo e conversão otimizada para um e-commerce de nicho.</p>
+    <section class="section about-me">
+      <img src="minha-foto.jpg" alt="Foto de Brian H. Castelhano" class="profile-img" />
+      <div class="about-text">
+        <h2>Brian H. Castelhano</h2>
+        <p>Sou Brian H. Castelhano, copywriter especializado em transformar ideias em palavras que vendem. Com experiência em diferentes nichos e plataformas, ajudo empresas e empreendedores a comunicar valor, engajar audiências e aumentar conversões. Minha paixão é escrever com propósito — seja para um lançamento, um funil de e-mails ou uma simples página de vendas.</p>
       </div>
-      <div class="card">
-        <h3>Email Marketing para SaaS</h3>
-        <p>Série de emails que aumentaram em 42% a retenção de leads qualificados.</p>
+    </section>
+
+    <section class="section">
+      <h2>Alguns dos meus projetos</h2>
+      <div class="projects-preview">
+        <div class="card">
+          <h3>Landing Page de Produto X</h3>
+          <p>Texto persuasivo e conversão otimizada para um e-commerce de nicho.</p>
+        </div>
+        <div class="card">
+          <h3>Email Marketing para SaaS</h3>
+          <p>Série de emails que aumentaram em 42% a retenção de leads qualificados.</p>
+        </div>
+        <div class="card">
+          <h3>Texto para anúncio Facebook Ads</h3>
+          <p>Campanha de impacto com mais de 10.000 cliques.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Texto para anúncio Facebook Ads</h3>
-        <p>Campanha de impacto com mais de 10.000 cliques.</p>
-      </div>
-    </div>
-    <br>
-    <a class="btn" href="/todos.html">Ver todos os projetos</a>
-  </section>
+      <a class="btn" href="/todos.html">Ver todos os projetos</a>
+    </section>
+  </main>
 
   <footer id="contato">
     &copy; 2025 Brian H. Castelhano. Todos os direitos reservados. | <a href="mailto:brian@email.com">brian@email.com</a>
