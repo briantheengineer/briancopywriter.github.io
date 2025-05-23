@@ -1,27 +1,27 @@
 ---
 layout: default
-title: Início
+title: Brian H. Castelhano Copywriter
 ---
 
 <header>
-  <nav style="background:white; padding:1rem; display:flex; align-items:center; justify-content:space-between; box-shadow:none;">
-    <div style="display:flex; align-items:center; gap:1rem;">
-      <img src="/assets/img/sua-foto.jpg" alt="Brian H. Castelhano" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" />
-      <h1 style="color:#2563eb; margin:0;">Brian H. Castelhano</h1>
+  <nav>
+    <div>
+      <img src="/assets/img/sua-foto.jpg" alt="Brian H. Castelhano" />
+      <h1>Brian H. Castelhano</h1>
     </div>
     <div>
-      <a href="blog.html" style="margin-right:1rem; text-decoration:none; color:#2563eb; font-weight:600;">Blog</a>
-      <a href="#contato" style="text-decoration:none; color:#2563eb; font-weight:600;">Contrate meu Serviço</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contato">Contrate meu Serviço</a>
     </div>
   </nav>
 </header>
 
-<section id="sobre-mim" style="max-width:700px; margin:2rem auto; padding:1rem;">
+<section id="sobre-mim">
   <h2>Sobre Mim</h2>
   <p>Sou Brian, copywriter apaixonado por criar textos que geram resultados reais para meus clientes. Tenho experiência em landing pages, email marketing e campanhas publicitárias.</p>
 </section>
 
-<section id="projetos" style="max-width:900px; margin:2rem auto; padding:1rem;">
+<section id="projetos">
   <h2>Alguns Projetos</h2>
   <ul>
     {% for project in site.projects %}
@@ -31,10 +31,10 @@ title: Início
     </li>
     {% endfor %}
   </ul>
-  <a href="todos.html" style="display:inline-block; margin-top:1rem; background:#2563eb; color:white; padding:0.5rem 1rem; border-radius:0.5rem; text-decoration:none;">Ver todos os projetos</a>
+  <a href="todos.html" class="btn">Ver todos os projetos</a>
 </section>
 
-<section id="ultimos-posts" style="max-width:700px; margin:2rem auto; padding:1rem;">
+<section id="ultimos-posts">
   <h2>Últimos Posts</h2>
   <ul>
     {% for post in site.posts limit:3 %}
@@ -45,7 +45,7 @@ title: Início
   </ul>
 </section>
 
-<footer id="contato" style="text-align:center; margin:3rem auto; padding:2rem; background:#e2e8f0;">
+<footer id="contato">
   <p>© 2025 Brian H. Castelhano. Todos os direitos reservados.</p>
   <p><strong>Contato:</strong> seuemail@exemplo.com</p>
 </footer>
