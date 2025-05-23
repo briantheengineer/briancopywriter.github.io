@@ -12,7 +12,7 @@
       --light: #f8fafc;
       --nav-bg: #fff;
       --nav-text: #1e293b;
-      --name-color: #2563eb; /* azul bonito */
+      --name-color: #2563eb;
     }
     body {
       margin: 0;
@@ -31,7 +31,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      /* REMOVIDO box-shadow para tirar a linha */
       z-index: 1000;
     }
     nav a {
@@ -47,7 +47,7 @@
     header {
       background: var(--primary);
       color: white;
-      padding: 6rem 2rem 2rem; /* pra dar espaço para nav fixa */
+      padding: 6rem 2rem 2rem;
       text-align: center;
     }
     header h1 {
@@ -113,6 +113,26 @@
       display: inline-block;
       margin-top: 1rem;
     }
+    #latest-post {
+      background: white;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #latest-post h2 {
+      color: var(--name-color);
+      margin-bottom: 1rem;
+    }
+    #latest-post a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    #latest-post a:hover {
+      text-decoration: underline;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -120,7 +140,7 @@
       margin-top: 3rem;
     }
     main {
-      margin-top: 80px; /* compensar nav fixa */
+      margin-top: 80px;
     }
   </style>
 </head>
@@ -163,6 +183,13 @@
         </div>
       </div>
       <a class="btn" href="/todos.html">Ver todos os projetos</a>
+    </section>
+
+    <section id="latest-post">
+      <h2>Último Post do Blog</h2>
+      <h3><a href="https://meublog.com/ultimo-post" target="_blank">Como Escrever Textos que Vendem: Guia Completo</a></h3>
+      <p>Descubra técnicas essenciais para criar textos que realmente convertem e ajudam seu negócio a crescer. Este guia traz insights práticos e exemplos reais para você aplicar já.</p>
+      <a href="https://meublog.com" target="_blank">Ver todos os posts</a>
     </section>
   </main>
 
