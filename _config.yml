@@ -1,10 +1,8 @@
 title: Brian H. Castelhano Copywriter
 description: Textos que vendem. Estratégias que convertem.
-baseurl: "" # deixe vazio se for no root do domínio
-url: "https://seuusuario.github.io" # substitua pela sua url
+baseurl: ""
+url: "https://seuusuario.github.io"
 
 collections:
   projects:
     output: true
-
-plugins: []
