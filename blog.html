@@ -1,48 +1,16 @@
-<!-- blog.html -->
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Brian Castelhano</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800 font-sans">
-  <header class="p-6 bg-[#1CA857] text-white flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Brian Castelhano</h1>
-    <nav class="space-x-4">
-      <a href="index.html" class="hover:underline">Início</a>
-      <a href="projetos.html" class="hover:underline">Projetos</a>
-      <a href="blog.html" class="hover:underline">Blog</a>
-    </nav>
-  </header>
+---
+layout: default
+title: Blog
+---
 
-  <section class="text-center py-16 px-6">
-    <h2 class="text-4xl font-bold mb-4">Blog</h2>
-    <p class="text-lg max-w-2xl mx-auto">
-      Artigos sobre copywriting, saúde, produtividade e escrita com propósito.
-    </p>
-  </section>
+<h2 class="text-3xl font-bold mb-6">Últimos Posts</h2>
 
-  <!-- Lista de posts -->
-  <section class="max-w-4xl mx-auto px-6 space-y-8">
-    <article class="border-b pb-6">
-      <h3 class="text-2xl font-bold">Ritmo circadiano e produtividade</h3>
-      <p class="text-gray-600 mb-2">Como seu relógio biológico afeta foco e performance. <span class="text-sm">(8 min de leitura)</span></p>
-      <a href="posts/ritmo-circadiano.html" class="text-[#1CA857] underline">Ler post</a>
-    </article>
-
-    <article class="border-b pb-6">
-      <h3 class="text-2xl font-bold">Como a copy certa transforma resultados</h3>
-      <p class="text-gray-600 mb-2">Exemplos reais de textos que mudaram o jogo. <span class="text-sm">(6 min de leitura)</span></p>
-      <a href="posts/copy-transforma.html" class="text-[#1CA857] underline">Ler post</a>
-    </article>
-
-    <!-- Adicione mais posts aqui -->
-  </section>
-
-  <footer class="bg-gray-800 text-white text-center py-6 mt-16">
-    © 2025 Brian Castelhano – Todos os direitos reservados.
-  </footer>
-</body>
-</html>
+<ul class="space-y-6">
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}" class="text-2xl text-blue-600 font-semibold hover:underline">{{ post.title }}</a>
+      <p class="text-sm text-gray-500">{{ post.date | date: "%d de %B de %Y" }}</p>
+      <p class="mt-2">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+    </li>
+  {% endfor %}
+</ul>
