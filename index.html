@@ -1,30 +1,56 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | Brian Castelhano</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800 font-sans leading-relaxed">
-  <!-- Cabeçalho -->
-  <header class="bg-blue-600 text-white p-6 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Brian Castelhano</h1>
-    <nav class="space-x-6 text-lg">
-      <a href="/" class="hover:underline">Início</a>
-      <a href="/projetos.html" class="hover:underline">Projetos</a>
-      <a href="/blog.html" class="hover:underline">Blog</a>
-    </nav>
-  </header>
+---
+layout: default
+title: Início
+---
 
-  <!-- Conteúdo principal -->
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    {{ content }}
-  </main>
+<!-- Seção Hero -->
+<section class="text-center py-12">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">Brian Castelhano</h1>
+  <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+    Copywriter & Ghostwriter especializado em saúde, produtividade e conversão. Eu transformo ideias em textos que vendem, conectam e inspiram.
+  </p>
+</section>
 
-  <!-- Rodapé -->
-  <footer class="bg-gray-800 text-white text-center py-6 mt-12">
-    © {{ site.time | date: '%Y' }} Brian Castelhano – Todos os direitos reservados.
-  </footer>
-</body>
-</html>
+<!-- Sobre Mim -->
+<section class="grid md:grid-cols-2 gap-10 items-center py-12">
+  <div>
+    <h2 class="text-3xl font-bold mb-4 text-blue-600">Sobre Mim</h2>
+    <p class="text-gray-700 text-lg leading-relaxed">
+      Sou um copywriter com formação em medicina e experiência em escrita para empresas de tecnologia, saúde e desenvolvimento pessoal. Minha missão é unir ciência e persuasão para criar textos que realmente geram impacto — seja em uma landing page ou um artigo de blog.
+    </p>
+  </div>
+  <div class="flex justify-center">
+    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600">
+      <img src="/assets/foto.jpg" alt="Foto de Brian Castelhano" class="w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Destaques -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold mb-6 text-blue-600">Destaques</h2>
+  <div class="grid md:grid-cols-2 gap-10">
+    <!-- Projeto -->
+    {% assign projeto = site.projects | first %}
+    <div class="p-6 border rounded-xl hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">Projeto em destaque</h3>
+      <a href="{{ projeto.url }}" class="text-2xl font-bold hover:underline">{{ projeto.title }}</a>
+      <p class="mt-2 text-gray-600">{{ projeto.excerpt | strip_html | truncate: 120 }}</p>
+    </div>
+
+    <!-- Post -->
+    {% assign post = site.posts | first %}
+    <div class="p-6 border rounded-xl hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">Último artigo do blog</h3>
+      <a href="{{ post.url }}" class="text-2xl font-bold hover:underline">{{ post.title }}</a>
+      <p class="mt-2 text-gray-600">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="text-center py-16 bg-blue-50 rounded-xl mt-12">
+  <h2 class="text-3xl font-bold mb-4">Pronto para elevar sua comunicação?</h2>
+  <p class="text-lg mb-6 text-gray-700">Entre em contato e vamos transformar sua mensagem em conversão.</p>
+  <a href="mailto:brian.castelhano@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition">Fale comigo</a>
+</section>
