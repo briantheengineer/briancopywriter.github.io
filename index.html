@@ -1,79 +1,30 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brian Castelhano | Copywriter</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-white text-gray-800 font-sans">
-    <!-- Header -->
-    <header class="p-6 bg-[#1CA857] text-white flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Brian Castelhano</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="hover:underline">Início</a>
-        <a href="projetos.html" class="hover:underline">Projetos</a>
-        <a href="blog.html" class="hover:underline">Blog</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | Brian Castelhano</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans leading-relaxed">
+  <!-- Cabeçalho -->
+  <header class="bg-blue-600 text-white p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Brian Castelhano</h1>
+    <nav class="space-x-6 text-lg">
+      <a href="/" class="hover:underline">Início</a>
+      <a href="/projetos.html" class="hover:underline">Projetos</a>
+      <a href="/blog.html" class="hover:underline">Blog</a>
+    </nav>
+  </header>
 
-    <!-- Hero -->
-    <section class="text-center py-20 px-6">
-      <h2 class="text-4xl font-bold mb-4">Copywriting que conecta e converte.</h2>
-      <p class="text-lg mb-6 max-w-2xl mx-auto">
-        Crio textos que geram resultados reais. Seja para landing pages, e-mails ou blogs, o foco é sempre o mesmo: conversão.
-      </p>
-      <a href="#contato" class="bg-[#1CA857] text-white py-2 px-4 rounded-lg hover:bg-green-600">
-        Vamos conversar
-      </a>
-    </section>
+  <!-- Conteúdo principal -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    {{ content }}
+  </main>
 
-    <!-- Sobre mim -->
-    <section class="max-w-4xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-10 items-center">
-      <img src="assets/foto-brian.jpg" alt="Foto do Brian" class="rounded-full w-64 mx-auto" />
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Sobre mim</h3>
-        <p>
-          Sou copywriter e escritor com foco em saúde, produtividade e conversão. Uso linguagem estratégica para transformar ideias em resultados, combinando storytelling com técnicas de copy persuasiva.
-        </p>
-      </div>
-    </section>
-
-    <!-- Projetos em destaque -->
-    <section class="bg-gray-100 py-16 px-6">
-      <h3 class="text-2xl font-bold text-center mb-10">Projetos em destaque</h3>
-      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h4 class="font-bold text-lg mb-2">Landing Page – Empresa X</h4>
-          <p>Copy voltada para geração de leads no setor de tecnologia.</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h4 class="font-bold text-lg mb-2">E-mail Marketing – Produto Y</h4>
-          <p>Sequência de e-mails com taxa de abertura acima de 40%.</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h4 class="font-bold text-lg mb-2">Artigo SEO – Saúde Masculina</h4>
-          <p>Artigo otimizado para ranqueamento e conversão com CTA.</p>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <a href="projetos.html" class="text-[#1CA857] underline">Ver todos os projetos</a>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="py-16 px-6 text-center">
-      <h3 class="text-2xl font-bold mb-4">Entre em contato</h3>
-      <p class="mb-6">Quer trocar uma ideia? Estou disponível para novos projetos.</p>
-      <a href="mailto:brian.castelhano@gmail.com" class="bg-[#1CA857] text-white py-2 px-4 rounded hover:bg-green-600">
-        brian.castelhano@gmail.com
-      </a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
-      © 2025 Brian Castelhano. Todos os direitos reservados.
-    </footer>
-  </body>
+  <!-- Rodapé -->
+  <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+    © {{ site.time | date: '%Y' }} Brian Castelhano – Todos os direitos reservados.
+  </footer>
+</body>
 </html>
