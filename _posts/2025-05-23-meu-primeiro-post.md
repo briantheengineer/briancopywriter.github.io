@@ -1,8 +1,5 @@
 ---
-layout: post
-title: "Meu primeiro post"
+layout: default
+title: "Meu Primeiro Post"
 date: 2025-05-23
-categories: blog
 ---
-
-Aqui começa o conteúdo do meu primeiro post!
